@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Disfraces de Halloween</title>
+    <style>
+/* ========================
+   GENERAL
+   ======================== */
+body {
+    background: linear-gradient(to bottom, #003366, #001122);
+    font-family: Arial, sans-serif;
+    color: #333;
+    margin: 0;
+    padding: 40px 20px;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+.main-disfraces {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.contenedor-gris {
+    background-color: #f5f5f5;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    border: 1px solid #ddd;
+}
+
+.contenedor-gris h2 {
+    color: #cc5500;
+    font-size: 1.5rem;
+    margin: 0 0 10px 0;
+    font-weight: bold;
+}
+
+.subtitulo-tabla {
+    color: #555;
+    font-style: italic;
+    margin: 0 0 20px 0;
+    font-size: 0.95rem;
+}
+
+/* ========================
+   TABLA - COMO EN LA IMAGEN 1
+   ======================== */
+.tabla-disfraces {
+  width:100%;
+  border-collapse:separate;
+  border-spacing:0;
+  background:#fff;
+  border:4px solid #c45100;
+  font-size:.92rem;
+}
+
+.tabla-disfraces thead th {
+  background:#c45100;
+  color:#fff;
+  padding:10px 12px;
+  text-align:left;
+  border-right:1px solid #9e3f00;
+}
+.tabla-disfraces thead th:last-child { border-right:none; }
+
+.tabla-disfraces tbody td {
+  padding:10px 12px;
+  background:linear-gradient(#eef3f9,#e3eaf4);
+  border-right:1px solid #cfcfcf;
+  border-bottom:1px solid #cfcfcf;
+}
+.tabla-disfraces tbody tr:last-child td { border-bottom:none; }
+.tabla-disfraces tbody td:last-child { border-right:none; }
+
+.tabla-disfraces td.col-index {
+  width:48px;
+  text-align:center;
+  font-weight:bold;
+  color:#fff;
+  background:#ff6a00;
+}
+
+.tabla-disfraces td.col-estilo {
+  text-align:center;
+  font-weight:600;
+  letter-spacing:.2px;
+}
+
+.tabla-disfraces a {
+  color:#0066cc;
+  text-decoration:none;
+}
+.tabla-disfraces a:hover { text-decoration:underline; }
+
+.tabla-disfraces td.col-precio {
+  text-align:right;
+  white-space:nowrap;
+}
+
+.pie-tabla {
+    text-align: center;
+    color: #555;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    font-style: italic;
+}
+
+/* ========================
+   FORMULARIO
+   ======================== */
+.fieldset-form {
+    background-color: #ffffff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.fieldset-form legend {
+    background-color: #ffffff;
+    padding: 0 12px;
+    font-weight: bold;
+    color: #cc5500;
+    font-size: 1.1rem;
+}
+
+.form-row {
+    margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.form-row label {
+    font-weight: bold;
+    color: #333;
+    min-width: 180px;
+    font-size: 0.9rem;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+input[type="time"],
+input[type="number"],
+select,
+textarea {
+    padding: 8px 10px;
+    border: 1px solid #999;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    background-color: white;
+    flex: 1;
+}
+
+.input-corto {
+    width: 80px !important;
+}
+
+textarea {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100px;
+    resize: vertical;
+}
+
+.radio-group,
+.checkbox-group {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.radio-group label,
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-weight: normal;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.direccion-group {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.direccion-group select,
+.direccion-group input {
+    flex: 1;
+    min-width: 120px;
+}
+
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.btn-naranja {
+    background-color: #ff6600;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    padding: 12px 28px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+}
+
+.btn-naranja:hover {
+    background-color: #e55c00;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 12px rgba(0,0,0,0.3);
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+footer {
+    background-color: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+    font-size: 0.95rem;
+    margin: 40px -20px 0 -20px;
+    width: calc(100% + 40px);
+    box-sizing: border-box;
+}
+
+footer p {
+    margin: 8px 0;
+}
+
+footer a {
+    color: #ff6600;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    body { padding: 20px 15px; }
+    .contenedor-gris { padding: 20px; border-radius: 12px; }
+    .form-row { flex-direction: column; align-items: flex-start; }
+    .form-row label { min-width: auto; }
+    input, select, textarea { width: 100%; }
+    .direccion-group { flex-direction: column; }
+    .form-buttons { flex-direction: column; }
+    .btn-naranja { width: 100%; }
+    footer { margin: 40px -15px 0 -15px; width: calc(100% + 30px); padding: 30px 15px; }
+}
+    </style>
+</head>
+<body>
+    <main class="main-disfraces">
+        <!-- TABLA -->
+        <section class="seccion-tabla">
+            <div class="contenedor-gris">
+                <h2>DISFRACES DE HALLOWEEN:</h2>
+                
+                <table class="tabla-disfraces">
+                    <thead>
+                        <tr>
+                            <th></th>
+                            <th>PARA QUIÉN</th>
+                            <th>NOMBRE DEL DISFRAZ</th>
+                            <th>ESTILO</th>
+                            <th>TIENDA</th>
+                            <th>PRECIO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="col-index">1</td>
+                            <td>Adulto</td>
+                            <td>Payaso Asesino</td>
+                            <td class="col-estilo" rowspan="5">Halloween</td>
+                            <td><a href="https://www.funidelia.es/" target="_blank">https://www.funidelia.es/</a></td>
+                            <td class="col-precio">50,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="col-index">2</td>
+                            <td>Adulto</td>
+                            <td>Vampiro</td>
+                            <td><a href="https://www.dondisfraz.com/" target="_blank">https://www.dondisfraz.com/</a></td>
+                            <td class="col-precio">60,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="col-index">3</td>
+                            <td>Adulto</td>
+                            <td>Zombi</td>
+                            <td></td>
+                            <td class="col-precio">60,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="col-index">4</td>
+                            <td>Niño</td>
+                            <td>Freddy Krueger</td>
+                            <td><a href="https://www.disfrazzes.com/" target="_blank">https://www.disfrazzes.com/</a></td>
+                            <td class="col-precio">39,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="col-index">5</td>
+                            <td>Niño</td>
+                            <td>Esqueleto</td>
+                            <td></td>
+                            <td class="col-precio">39,00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+            </div>
+        </section>
+
+        <!-- FORMULARIO DE PEDIDO -->
+        <section class="seccion-formulario">
+            <div class="contenedor-gris">
+                <h2>FORMULARIO DE PEDIDO:</h2>
+                
+                <form action="#" method="post">
+                    <!-- Carrito de compra -->
+                    <fieldset class="fieldset-form">
+                        <legend>CARRITO DE COMPRA:</legend>
+                        
+                        <div class="form-row">
+                            <label for="disfraz">DISFRAZ:</label>
+                            <input type="text" id="disfraz" name="disfraz">
+                        </div>
+
+                        <div class="form-row">
+                            <label>TALLA:</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="talla" value="x-small"> X-SMALL</label>
+                                <label><input type="radio" name="talla" value="small"> SMALL</label>
+                                <label><input type="radio" name="talla" value="medium"> MEDIUM</label>
+                                <label><input type="radio" name="talla" value="large"> LARGE</label>
+                                <label><input type="radio" name="talla" value="x-large"> X-LARGE</label>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="cantidad">CANTIDAD:</label>
+                            <input type="number" id="cantidad" name="cantidad" min="1" value="1">
+                        </div>
+
+                        <div class="form-row">
+                            <label>MÉTODO DE PAGO:</label>
+                            <div class="checkbox-group">
+                                <label><input type="checkbox" name="pago" value="tarjeta"> TARJETA DE CRÉDITO</label>
+                                <label><input type="checkbox" name="pago" value="bizum"> BIZUM</label>
+                                <label><input type="checkbox" name="pago" value="transferencia"> TRANSFERENCIA</label>
+                            </div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Datos personales -->
+                    <fieldset class="fieldset-form">
+                        <legend>DATOS PERSONALES:</legend>
+                        
+                        <div class="form-row">
+                            <label for="nombre">NOMBRE Y APELLIDOS:</label>
+                            <input type="text" id="nombre" name="nombre">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="email">MAIL:</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="telefono">TELÉFONO:</label>
+                            <input type="tel" id="telefono" name="telefono">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="direccion">DIRECCIÓN de ENVÍO:</label>
+                            <div class="direccion-group">
+                                <select id="tipo-via" name="tipo-via">
+                                    <option value="">Tipos de vía</option>
+                                    <option value="calle">Calle</option>
+                                    <option value="avenida">Avenida</option>
+                                    <option value="plaza">Plaza</option>
+                                    <option value="paseo">Paseo</option>
+                                </select>
+                                <input type="text" name="nombre-via" placeholder="Nombre de la vía">
+                                <input type="text" name="portal" placeholder="Portal" class="input-corto">
+                                <input type="text" name="piso" placeholder="Piso" class="input-corto">
+                                <input type="text" name="letra" placeholder="Letra" class="input-corto">
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label for="fecha-envio">FECHA DE ENVÍO:</label>
+                            <input type="date" id="fecha-envio" name="fecha-envio">
+                        </div>
+
+                        <div class="form-row">
+                            <label for="hora-preferencia">PREFERENCIA DE HORA:</label>
+                            <input type="time" id="hora-preferencia" name="hora-preferencia">
+                        </div>
+                    </fieldset>
+
+                    <!-- Información para seguimiento -->
+                    <fieldset class="fieldset-form">
+                        <legend>INFORMACIÓN PARA SEGUIMIENTO:</legend>
+                        
+                        <div class="form-row">
+                            <label for="informacion-adicional">INFORMACIÓN ADICIONAL:</label>
+                            <textarea id="informacion-adicional" name="informacion-adicional" rows="5"></textarea>
+                        </div>
+                    </fieldset>
+
+                    <!-- Botones -->
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-naranja">TRAMITAR PEDIDO</button>
+                        <button type="reset" class="btn-naranja">CANCELAR PEDIDO</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>© 2025 Halloween - Wenzel Addug</p>
+        <p><a href="../index.html">Volver a HOME</a></p>
+    </footer>
+</body>
+</html>
